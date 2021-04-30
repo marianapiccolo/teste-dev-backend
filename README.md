@@ -1,54 +1,49 @@
 ![Oli Saúde|100x397,20%](https://hs-7708371.f.hubspotfree.net/hub/7708371/hubfs/logo-olisaude.png?upscale=true&width=288&upscale=true&name=logo-olisaude.png)
 
-# Backend Developer Challenge
-Este é um desafio simples para testar suas habilidades na construção de APIs.
-Os serviços da Oli usam principalmente tecnologias Kotlin e Springboot. No entanto, você pode usar qualquer linguagem e framework que lhe pareça mais confortável.
+# The Challenge
+Create a simple API to manage Clients. This API should allow:
+- Create a customer
+- Edit a customer
+- Get a specific customer
+- List customers
 
-# O Desafio
-Crie uma API simples para gerenciar Clientes. Esta API deve permitir:
-- Criar um cliente
-- Editar um cliente
-- Obter um cliente específico
-- Listar clientes
+A Client must have the following fields:
+- Name
+- birth date
+- gender
+- [ health problems ]
+- creation date
+- update date
 
-Um Cliente deve ter os seguintes campos:
-- nome
-- data de nascimento
-- sexo 
-- [ problemas de saude ]
-- data de criação
-- data de atualização
-
-Problemas de Saúde
-- nome
-- grau do problema (de 1 a 2)
+Health problems
+- Name
+- degree of problem (1 to 2)
     
-    ```
-    ex: diabetes, grau 2
-    ```
-
-Criar um endpoint para trazer os 10 clientes com maior risco de saúde, no qual o cálculo é:
+    ``
+    ex: diabetes, degree 2
+    ``
+Create an endpoint to bring the 10 clients with the highest health risk, in which the calculation is:
     
     ```
         sd = soma do grau dos problemas
         score = (1 / (1 + eˆ-(-2.8 + sd ))) * 100
     ```
 
-# Requisitos
-- Todas as respostas da API devem ser JSON
-- Fornece um arquivo README.md com instruções de uso (como executar, endpoints etc)
+# Technologies used
+- Java
+- SpringBoot
+- Postman
+- MySQL
 
-# Recomendações
-- Tests, tests and tests
-- SOLID
-- Código e commits em inglês (métodos, classes, variáveis, etc)
+# Spring Boot Flow Architecture
+- Layers: Model, Repository and Controller.
+- Methods: Get, Put, Post.
+- Get: Get the API data.
+- Post: Create a new data.
+- Put: Update the data.
 
-# Avaliação
-- Estrutura, arquitetura e organização do projeto
-- Boas práticas de programação
-- Alcance dos objetivos propostos.
+# Endpoint
+- Score: Calculates the sum of the degrees of each client's health problem and then calculates the client's score.
+- showTenClients: Show the 10 clients with the highest health risk.
 
-# Entrega
-Você deve fazer um fork deste repositório e confirmar a solução na pasta de dev. Seu repositório deve ser público.
 
-Enviar um e-mail para tech@olisaude.com.br com a url da sua solução.
